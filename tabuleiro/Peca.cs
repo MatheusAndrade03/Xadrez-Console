@@ -10,9 +10,9 @@ namespace tabuleiro
         public Tabuleiro Tab { get; set; }
 
 
-        public Peca(Posicao posicao, Cor cor, Tabuleiro tab) {
+        public Peca(Tabuleiro tab, Cor cor) {
         
-            this.Posicao = posicao;
+            this.Posicao = null;
             this.Cor = cor;
             this.Tab = tab;
             this.QtdMovimento = 0;

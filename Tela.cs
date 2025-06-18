@@ -4,7 +4,7 @@ using tabuleiro;
 
 namespace Xadrez_Console
 {
-    internal class Tela
+    static class Tela
     {
 
 
@@ -17,10 +17,10 @@ namespace Xadrez_Console
                 for (int j = 0; j < tab.Colunas; j++)
                 {
 
-                    if (tab.peca(i,j) == null) Console.Write("- ");
+                    if (tab.peca(i,j) == null) Console.Write("-");
                     
                         
-                    Console.Write(tab.peca(i,j) + " ");
+                    Console.Write(tab.peca(i,j) + "  ");
                     
                 
                 }
