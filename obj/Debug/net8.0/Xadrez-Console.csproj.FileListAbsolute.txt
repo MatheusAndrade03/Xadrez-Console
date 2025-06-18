@@ -1,0 +1,15 @@
+C:\matheus.andrade\Plano de treinamento Matheus Pellegrini\C#\Xadrez-Console\Xadrez-Console\bin\Debug\net8.0\Xadrez-Console.exe
+C:\matheus.andrade\Plano de treinamento Matheus Pellegrini\C#\Xadrez-Console\Xadrez-Console\bin\Debug\net8.0\Xadrez-Console.deps.json
+C:\matheus.andrade\Plano de treinamento Matheus Pellegrini\C#\Xadrez-Console\Xadrez-Console\bin\Debug\net8.0\Xadrez-Console.runtimeconfig.json
+C:\matheus.andrade\Plano de treinamento Matheus Pellegrini\C#\Xadrez-Console\Xadrez-Console\bin\Debug\net8.0\Xadrez-Console.dll
+C:\matheus.andrade\Plano de treinamento Matheus Pellegrini\C#\Xadrez-Console\Xadrez-Console\bin\Debug\net8.0\Xadrez-Console.pdb
+C:\matheus.andrade\Plano de treinamento Matheus Pellegrini\C#\Xadrez-Console\Xadrez-Console\obj\Debug\net8.0\Xadrez-Console.GeneratedMSBuildEditorConfig.editorconfig
+C:\matheus.andrade\Plano de treinamento Matheus Pellegrini\C#\Xadrez-Console\Xadrez-Console\obj\Debug\net8.0\Xadrez-Console.AssemblyInfoInputs.cache
+C:\matheus.andrade\Plano de treinamento Matheus Pellegrini\C#\Xadrez-Console\Xadrez-Console\obj\Debug\net8.0\Xadrez-Console.AssemblyInfo.cs
+C:\matheus.andrade\Plano de treinamento Matheus Pellegrini\C#\Xadrez-Console\Xadrez-Console\obj\Debug\net8.0\Xadrez-Console.csproj.CoreCompileInputs.cache
+C:\matheus.andrade\Plano de treinamento Matheus Pellegrini\C#\Xadrez-Console\Xadrez-Console\obj\Debug\net8.0\Xadrez-Console.sourcelink.json
+C:\matheus.andrade\Plano de treinamento Matheus Pellegrini\C#\Xadrez-Console\Xadrez-Console\obj\Debug\net8.0\Xadrez-Console.dll
+C:\matheus.andrade\Plano de treinamento Matheus Pellegrini\C#\Xadrez-Console\Xadrez-Console\obj\Debug\net8.0\refint\Xadrez-Console.dll
+C:\matheus.andrade\Plano de treinamento Matheus Pellegrini\C#\Xadrez-Console\Xadrez-Console\obj\Debug\net8.0\Xadrez-Console.pdb
+C:\matheus.andrade\Plano de treinamento Matheus Pellegrini\C#\Xadrez-Console\Xadrez-Console\obj\Debug\net8.0\Xadrez-Console.genruntimeconfig.cache
+C:\matheus.andrade\Plano de treinamento Matheus Pellegrini\C#\Xadrez-Console\Xadrez-Console\obj\Debug\net8.0\ref\Xadrez-Console.dll
