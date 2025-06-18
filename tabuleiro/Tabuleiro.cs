@@ -8,7 +8,7 @@ namespace tabuleiro
         public int Colunas { get; set; }
         public int Linhas { get; set; }
 
-        public Peca[,] Pecas;
+        private Peca[,] pecas;
 
 
         public Tabuleiro(int colunas , int linhas) {
@@ -16,7 +16,15 @@ namespace tabuleiro
             this.Colunas = colunas;
             this.Linhas = linhas;
 
-            this.Pecas = new Peca[colunas,linhas];
+            this.pecas = new Peca[colunas,linhas];
+        }
+
+        // Retorna 1 peça 
+
+        public Peca peca(int linha , int coluna) {
+
+            return pecas[linha, coluna];
+        
         }
     }
 }
