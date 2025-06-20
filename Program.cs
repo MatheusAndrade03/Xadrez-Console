@@ -1,61 +1,58 @@
-﻿using tabuleiro;
+﻿using System;
+using tabuleiro;
 using xadrez;
-using Xadrez_Console.tabuleiro;
 
-
-namespace Xadrez_Console
+namespace xadrez_console
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
+
             try
             {
-                PartidaDeXadrez part = new PartidaDeXadrez();
+                PartidaDeXadrez partida = new PartidaDeXadrez();
 
-                while (!part.Terminada)
+                while (!partida.terminada)
                 {
+
                     try
                     {
                         Console.Clear();
+                        Tela.imprimirPartida(partida);
 
-                        Tela.imprimirPartida(part);
                         Console.WriteLine();
-                        
-
-                        Console.WriteLine("Origem: ");
+                        Console.Write("Origem: ");
                         Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
-                        part.validarPosicaoDeOrigem(origem);
+                        partida.validarPosicaoDeOrigem(origem);
 
-                        bool[,] posicoesPosiveis = part.Tab.peca(origem).movimentosPossiveis();
-
+                        bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
 
                         Console.Clear();
-                        Tela.ImprimirTabuleiro(part.Tab, posicoesPosiveis);
+                        Tela.imprimirTabuleiro(partida.tab, posicoesPossiveis);
 
-                        Console.WriteLine("Destino: ");
+                        Console.WriteLine();
+                        Console.Write("Destino: ");
                         Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
-                        part.validarPosicaoDeDestino(origem,destino);
+                        partida.validarPosicaoDeDestino(origem, destino);
 
-
-                        part.realizaJogada(origem, destino);
+                        partida.realizaJogada(origem, destino);
                     }
-                    catch (TabuleiroException e) {
+                    catch (TabuleiroException e)
+                    {
                         Console.WriteLine(e.Message);
                         Console.ReadLine();
                     }
                 }
-
-
-
+                Console.Clear();
+                Tela.imprimirPartida(partida);
             }
-            catch (TabuleiroException ex)
+            catch (TabuleiroException e)
             {
-                Console.WriteLine(ex.Message);
-                
+                Console.WriteLine(e.Message);
             }
 
-
+            Console.ReadLine();
         }
     }
 }

@@ -1,112 +1,74 @@
 ﻿
 
-using Xadrez_Console.tabuleiro;
-
 namespace tabuleiro
 {
-    internal class Tabuleiro
+    class Tabuleiro
     {
 
-        public int Colunas { get; set; }
-        public int Linhas { get; set; }
-
+        public int linhas { get; set; }
+        public int colunas { get; set; }
         private Peca[,] pecas;
 
-
-        public Tabuleiro(int colunas, int linhas)
+        public Tabuleiro(int linhas, int colunas)
         {
-
-            this.Colunas = colunas;
-            this.Linhas = linhas;
-
-            this.pecas = new Peca[colunas, linhas];
+            this.linhas = linhas;
+            this.colunas = colunas;
+            pecas = new Peca[linhas, colunas];
         }
-
-        // métodos ....................................................................
-
-        // Retorna 1 peça 
 
         public Peca peca(int linha, int coluna)
         {
-
             return pecas[linha, coluna];
         }
 
         public Peca peca(Posicao pos)
         {
-
-            return pecas[pos.Linha, pos.Coluna];
+            return pecas[pos.linha, pos.coluna];
         }
 
-        // Coloca 1 Peça no Tabuleiro
+        public bool existePeca(Posicao pos)
+        {
+            validarPosicao(pos);
+            return peca(pos) != null;
+        }
+
         public void colocarPeca(Peca p, Posicao pos)
         {
-
-            if (existPeca(pos))
+            if (existePeca(pos))
             {
-                throw new TabuleiroException("já existe uma peça nesta posição, " + pos);
+                throw new TabuleiroException("Já existe uma peça nessa posição!");
             }
-
-            pecas[pos.Linha, pos.Coluna] = p;
-            p.Posicao = pos;
+            pecas[pos.linha, pos.coluna] = p;
+            p.posicao = pos;
         }
-
-        // retirar uma peça
 
         public Peca retirarPeca(Posicao pos)
         {
-
             if (peca(pos) == null)
             {
                 return null;
             }
             Peca aux = peca(pos);
-            aux.Posicao = null;
-            pecas[pos.Linha, pos.Coluna] = null;
+            aux.posicao = null;
+            pecas[pos.linha, pos.coluna] = null;
             return aux;
-
-
-
         }
 
-
-        // identifica se a posição informada é valida
         public bool posicaoValida(Posicao pos)
         {
-
-            if (pos.Linha < 0 || pos.Linha >= Linhas || pos.Coluna < 0 || pos.Coluna >= Colunas) return false;
-
+            if (pos.linha < 0 || pos.linha >= linhas || pos.coluna < 0 || pos.coluna >= colunas)
+            {
+                return false;
+            }
             return true;
         }
 
-        // Gera uma mensagem caso a posição seja invalida
         public void validarPosicao(Posicao pos)
         {
             if (!posicaoValida(pos))
             {
-                throw new TabuleiroException("Posição invalida, " + pos);
-
+                throw new TabuleiroException("Posição inválida!");
             }
         }
-
-
-        // veificar se existe uma peça na posição 
-
-        public bool existPeca(Posicao pos)
-        {
-            validarPosicao(pos);
-
-            if (peca(pos) != null)
-            {
-                return true;
-            }
-
-            return false;
-
-        }
-
-
-
-
     }
 }
