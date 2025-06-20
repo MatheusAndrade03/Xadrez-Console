@@ -22,9 +22,7 @@ namespace Xadrez_Console
                 Console.WriteLine(ex.Message);
             }
 
-            PosicaoXadrez px = new PosicaoXadrez('a',1);
-
-            Console.WriteLine(px.toPosicao());
+          
         }
     }
 }
