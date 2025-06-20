@@ -19,10 +19,9 @@ namespace Xadrez_Console
                     {
                         Console.Clear();
 
-                        Tela.ImprimirTabuleiro(part.Tab);
+                        Tela.imprimirPartida(part);
                         Console.WriteLine();
-                        Console.WriteLine("Turno : " + part.Turno);
-                        Console.WriteLine("vez das : " + part.JogadorAtual + "s");
+                        
 
                         Console.WriteLine("Origem: ");
                         Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
