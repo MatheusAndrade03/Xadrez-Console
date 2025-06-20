@@ -2,6 +2,7 @@
 using xadrez;
 using Xadrez_Console.tabuleiro;
 
+
 namespace Xadrez_Console
 {
     internal class Program
@@ -14,19 +15,36 @@ namespace Xadrez_Console
 
                 while (!part.Terminada)
                 {
+                    try
+                    {
+                        Console.Clear();
 
-                    Tela.ImprimirTabuleiro(part.Tab);
-                    Console.WriteLine();
+                        Tela.ImprimirTabuleiro(part.Tab);
+                        Console.WriteLine();
+                        Console.WriteLine("Turno : " + part.Turno);
+                        Console.WriteLine("vez das : " + part.JogadorAtual + "s");
 
-                    Console.WriteLine("Origem: ");
-                    Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
+                        Console.WriteLine("Origem: ");
+                        Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
+                        part.validarPosicaoDeOrigem(origem);
 
-                    Console.WriteLine("Destino: ");
-                    Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
+                        bool[,] posicoesPosiveis = part.Tab.peca(origem).movimentosPossiveis();
 
-                    part.executarMovimento(origem, destino);
 
-                   
+                        Console.Clear();
+                        Tela.ImprimirTabuleiro(part.Tab, posicoesPosiveis);
+
+                        Console.WriteLine("Destino: ");
+                        Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
+                        part.validarPosicaoDeDestino(origem,destino);
+
+
+                        part.realizaJogada(origem, destino);
+                    }
+                    catch (TabuleiroException e) {
+                        Console.WriteLine(e.Message);
+                        Console.ReadLine();
+                    }
                 }
 
 
@@ -35,6 +53,7 @@ namespace Xadrez_Console
             catch (TabuleiroException ex)
             {
                 Console.WriteLine(ex.Message);
+                
             }
 
 
