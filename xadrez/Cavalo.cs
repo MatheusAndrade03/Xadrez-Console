@@ -4,15 +4,15 @@ using tabuleiro;
 
 namespace xadrez
 {
-    internal class Rei : Peca
+    internal class Cavalo : Peca
     {
-        public Rei(Tabuleiro tab, Cor cor) : base(tab, cor)
+        public Cavalo(Tabuleiro tab, Cor cor) : base(tab, cor)
         {
         }
-
+        
         public override string ToString()
         {
-            return "K";
+            return "C";
         }
     }
 }
